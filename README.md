@@ -10,9 +10,12 @@ To deploy this project run
 ```bash
 On Grafana Host
 1. Follow https://github.com/skenderidis/nap-dashboard
+2. cd ~/nginx-plus-dashboard/grafana-host
+2. docker run -dit -p 9090:9090 -v ~/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 
 On Nginx Host
 ***NGINX NAP need to be installed prior the following steps
+modules***
 
 1. Copy nap_log_profile.json_dashboard.tgz to /etc/app_protect/bundles
 2. Copy policy-demo.tgz to /etc/app_protect/bundles
@@ -21,7 +24,10 @@ On Nginx Host
 5. Copy default.conf to /etc/nginx/conf.d
 6. Copy httplb.conf to /etc/nginx/conf.d
 7. Copy nginx-plus-mgmt.conf to /etc/nginx/conf.d
-8. Run sudo systemctl start nginx
+8. sudo apt install nginx-plus-module-prometheus
+9. cd ~/nginx-plus-dashboard/nginx-host/loki-promtail
+10. docker compose up -d
+11. sudo systemctl start nginx
 
 ```
 
