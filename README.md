@@ -37,8 +37,7 @@ modules***
 
 ```
 
-
-## Screenshots
+## Import Dashboard Menu on Grafana
 
 ![Dashboard Import](images/dashboard-import.jpg)
 
