@@ -17,6 +17,8 @@ On Grafana dashboard
 1. Import ~/nginx-plus-dashboard/grafana-host/grafana_dashboard_json/nginx_plus_metric_dashboard.json
 2. Import ~/nginx-plus-dashboard/grafana-host/grafana_dashboard_json/nginx_plus_access_log_dashboard.json
 
+
+
 On Nginx Host
 ***NGINX NAP need to be installed prior the following steps
 modules***
@@ -34,4 +36,9 @@ modules***
 11. sudo systemctl start nginx
 
 ```
+
+
+## Screenshots
+
+![Dashboard Import](images/dashboard-import.jpg)
 
