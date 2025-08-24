@@ -1,2 +1,2 @@
 # nginx-plus-dashboard
-NAP Securit Log, Metric and Access Log Dashboard
+NAP Security Log, Metric and Access Log Dashboard
