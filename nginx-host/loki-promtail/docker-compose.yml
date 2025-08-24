@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  loki:
+    image: grafana/loki:2.9.8
+    container_name: loki
+    command: -config.file=/etc/loki/local-config.yaml
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./loki-data:/loki
+    restart: unless-stopped
+
+  promtail:
+    image: grafana/promtail:2.9.8
+    container_name: promtail
+    command: -config.file=/etc/promtail/config.yml
+    volumes:
+      - ./config/promtail-config.yml:/etc/promtail/config.yml:ro
+      - /var/log/nginx:/var/log/nginx:ro
+    ports:
+      - "9080:9080" # Promtail metrics endpoint
+    depends_on:
+      - loki
+    restart: unless-stopped
+

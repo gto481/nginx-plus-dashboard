@@ -1,0 +1,83 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+
+  # --- Access logs ---
+  - job_name: nginx_access
+    static_configs:
+      - targets: [localhost]
+        labels:
+          job: nginx
+          logtype: access
+          __path__: /var/log/nginx/*-access.log
+
+    pipeline_stages:
+      # Parse key fields including server_name
+      - regex:
+          expression: 'server_name:\s*(?P<server_name>[^,]+), cip:\s*(?P<cip>[^,]+), time:\s*\[(?P<time>[^\]]+)\], request:\s*"(?P<method>\S+) (?P<uri>\S+) (?P<protocol>[^"]+)", ssl_protocol:\s*"(?P<ssl_protocol>[^"]+)", ssl_cipher:\s*"(?P<ssl_cipher>[^"]+)" upstream_addr:\s*(?P<upstream_addr>[^,]+), response_code:\s*(?P<status>\d+), upstream_response_time:\s*(?P<upstream_rt>[^,]+), referer:\s*"(?P<referer>[^"]+)" ua:\s*"(?P<ua>[^"]+)", xff:\s*"(?P<xff>[^"]+)", upstream_cookie_uid:\s*"(?P<upstream_cookie_uid>[^"]+)", cookie_uid:\s*"(?P<cookie_uid>[^"]+)"limit_conn:\s*(?P<limit_conn>[^,]+), limit_req:\s*(?P<limit_req>[^,]+), request_time:\s*(?P<request_time>[\d\.]+)$'
+
+      # Attach labels (server_name is key for Grafana)
+      - labels:
+          server_name:
+          method:
+          status:
+          ssl_protocol:
+          upstream_addr:
+
+      # Metrics (optional, Prometheus-style)
+      - metrics:
+          nginx_requests_total:
+            type: counter
+            description: "Total requests"
+            config:
+              action: inc
+            labels:
+              server_name: server_name
+              method: method
+              status: status
+
+          nginx_request_time_seconds:
+            type: histogram
+            description: "Histogram of request_time"
+            source: request_time
+            buckets: [0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2, 5]
+            config:
+              action: observe
+            labels:
+              server_name: server_name
+              method: method
+              status: status
+
+          nginx_upstream_time_seconds:
+            type: histogram
+            description: "Histogram of upstream_response_time"
+            source: upstream_rt
+            buckets: [0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2, 5]
+            config:
+              action: observe
+            labels:
+              server_name: server_name
+              upstream: upstream_addr
+
+  # --- Error logs ---
+  - job_name: nginx_error
+    static_configs:
+      - targets: [localhost]
+        labels:
+          job: nginx
+          logtype: error
+          __path__: /var/log/nginx/*-error.log
+    pipeline_stages:
+      - regex:
+          expression: 'server_name:(?P<server_name>\S+)'
+      - labels:
+          server_name:
+
