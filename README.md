@@ -25,7 +25,7 @@ On Grafana dashboard
 ```bash
 On Nginx Host
 
-***Install NGINX Plus and NAP***
+***Install NGINX Plus with required modules and NAP***
 
 1. cd ~/nginx-plus-dashboard/nginx-host
 2. chmod +x nginx_plus_nap_install.sh
