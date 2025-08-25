@@ -12,11 +12,17 @@ On Grafana Host
 1. Follow https://github.com/skenderidis/nap-dashboard
 2. cd ~/nginx-plus-dashboard/grafana-host
 2. docker run -dit -p 9090:9090 -v ~/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
-
+```
+```bash
 On Grafana dashboard
 1. Import ~/nginx-plus-dashboard/grafana-host/grafana_dashboard_json/nginx_plus_metric_dashboard.json
 2. Import ~/nginx-plus-dashboard/grafana-host/grafana_dashboard_json/nginx_plus_access_log_dashboard.json
+```
 
+## Import Dashboard Menu on Grafana
+![Dashboard Import](images/dashboard-import.jpg)
+
+```bash
 On Nginx Host
 ***NGINX NAP need to be installed prior the following steps
 modules***
@@ -34,9 +40,3 @@ modules***
 11. sudo systemctl start nginx
 
 ```
-
-## Import Dashboard Menu on Grafana
-
-![Dashboard Import](images/dashboard-import.jpg)
-
-
