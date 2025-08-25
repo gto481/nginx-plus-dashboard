@@ -46,6 +46,8 @@ sudo mkdir -p /etc/docker/certs.d/private-registry.nginx.com
 sudo cp "$NGINX_CERT" /etc/docker/certs.d/private-registry.nginx.com/client.cert
 sudo cp "$NGINX_KEY" /etc/docker/certs.d/private-registry.nginx.com/client.key
 
+sudo apt install nginx-plus-module-geoip2
+sudo apt install nginx-plus-module-prometheus
 
 cat <<EOF >>docker-compose.yml
 services:
