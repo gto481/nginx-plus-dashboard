@@ -34,6 +34,7 @@ On Nginx Host
 
 ```bash
 On Nginx Host
+
 ***Ensure NGINX Plus and NAP are installed prior the following steps***
 
 1. cp ~/nginx-plus-dashboard/nginx-host/nginx/bundles/nap_log_profile.json_dashboard.tgz /etc/app_protect/bundles
