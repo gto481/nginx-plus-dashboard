@@ -20,7 +20,7 @@ On Grafana dashboard
 ```
 
 ## Import Dashboard Menu on Grafana
-![Dashboard Import](images/dashboard-import.jpg)
+<img src="images/dashboard-import.jpg" alt="Dashboard Import" width="600px">
 
 ```bash
 On Nginx Host
