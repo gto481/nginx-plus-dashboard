@@ -44,7 +44,7 @@ On Nginx Host
 5. cp ~/nginx-plus-dashboard/nginx-host/nginx/conf.d/default.conf /etc/nginx/conf.d
 6. cp ~/nginx-plus-dashboard/nginx-host/nginx/conf.d/httplb.conf /etc/nginx/conf.d
 7. cp ~/nginx-plus-dashboard/nginx-host/nginx/conf.d/nginx-plus-mgmt.conf /etc/nginx/conf.d
-8. sudo apt install nginx-plus-module-prometheus
+8. cp ~/nginx-plus-dashboard/nginx-host/nginx/cert/* /etc/nginx/cert
 9. cd ~/nginx-plus-dashboard/nginx-host/loki-promtail
 10. docker compose up -d
 11. sudo systemctl start nginx
