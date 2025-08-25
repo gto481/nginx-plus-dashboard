@@ -24,8 +24,7 @@ On Grafana dashboard
 
 ```bash
 On Nginx Host
-***NGINX NAP need to be installed prior the following steps
-modules***
+***NGINX Plus and NAP need to be installed prior the following steps***
 
 1. Copy nap_log_profile.json_dashboard.tgz to /etc/app_protect/bundles
 2. Copy policy-demo.tgz to /etc/app_protect/bundles
