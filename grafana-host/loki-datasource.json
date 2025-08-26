@@ -1,5 +1,4 @@
 {
-  "id": 2,
   "uid": "f90f0e0a-0d8f-408d-a632-5fefba8225de",
   "orgId": 1,
   "name": "loki",
@@ -15,6 +14,5 @@
   "isDefault": false,
   "jsonData": {},
   "secureJsonFields": {},
-  "version": 2,
   "readOnly": false
 }
