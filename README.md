@@ -64,7 +64,12 @@ On Nginx Host
 
 ```
 ## Example Dashboard Screenshot
+### NGINX App Protect Dashboard
 <img src="images/NAP-Main-Dashboard.jpg" alt="NAP-Main-Dashboard" width="500px">
 <img src="images/NAP-SupportID.jpg" alt="NAP-SupportID" width="500px">
+
+### NGINX Performance Dashboard
 <img src="images/NGINX-Plus-Performance-Dashboard.jpg" alt="NGINX-Plus-Performance-Dashboard" width="500px">
+
+### NGINX Access Log Dashboard
 <img src="images/NGINX-Plus-Access-Log.jpg" alt="NGINX-Plus-Access-Log" width="500px">
