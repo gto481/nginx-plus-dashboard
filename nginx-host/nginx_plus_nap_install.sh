@@ -53,7 +53,7 @@ cat <<EOF >>docker-compose.yml
 services:
   waf-enforcer:
     container_name: waf-enforcer
-    image: private-registry.nginx.com/nap/waf-enforcer:5.2.0
+    image: private-registry.nginx.com/nap/waf-enforcer:5.8.0
     environment:
       - ENFORCER_PORT=50000
     ports:
@@ -66,7 +66,7 @@ services:
 
   waf-config-mgr:
     container_name: waf-config-mgr
-    image: private-registry.nginx.com/nap/waf-config-mgr:5.2.0
+    image: private-registry.nginx.com/nap/waf-config-mgr:5.8.0
     volumes:
       - /opt/app_protect/bd_config:/opt/app_protect/bd_config
       - /opt/app_protect/config:/opt/app_protect/config
