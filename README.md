@@ -32,7 +32,7 @@ On Grafana dashboard
 2. Import ~/nginx-plus-dashboard/grafana-host/grafana_dashboard_json/nginx_plus_access_log_dashboard.json
 ```
 
-## Import Dashboard Menu on Grafana
+# Import Dashboard Menu on Grafana
 <img src="images/dashboard-import.jpg" alt="Dashboard Import" width="400px">
 
 ```bash
