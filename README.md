@@ -5,7 +5,7 @@ NAP Security Log, Metric and Access Log Dashboard
 
 ## Deployment
 
-To deploy this project run
+To deploy this project run (on Ubuntu 22.04)
 
 ```bash
 On Grafana Host
