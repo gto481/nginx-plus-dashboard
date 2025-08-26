@@ -22,7 +22,9 @@ On Grafana Host
 11. curl -d "@grafana/DS-waf-decoded-index.json" -H 'Content-Type: application/json' -u 'admin:admin' -X POST 'http://localhost:3000/api/datasources/'
 12. Follow https://github.com/skenderidis/nap-dashboard (Import Dashboard)
 13. cd ~/nginx-plus-dashboard/grafana-host
-14. docker run -dit -p 9090:9090 -v ~/prometheus.yml:/etc/prometheus/prometheus.yml --restart=always prom/prometheus
+14. curl -d "loki-datasource.json" -H 'Content-Type: application/json' -u 'admin:admin' -X POST 'http://localhost:3000/api/datasources/'
+15. curl -d "prometheus-datasource.json" -H 'Content-Type: application/json' -u 'admin:admin' -X POST 'http://localhost:3000/api/datasources/'
+16. docker run -dit -p 9090:9090 -v ~/prometheus.yml:/etc/prometheus/prometheus.yml --restart=always prom/prometheus
 ```
 ```bash
 On Grafana dashboard
