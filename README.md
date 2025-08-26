@@ -9,9 +9,20 @@ To deploy this project run
 
 ```bash
 On Grafana Host
-1. Follow https://github.com/skenderidis/nap-dashboard
-2. cd ~/nginx-plus-dashboard/grafana-host
-3. docker run -dit -p 9090:9090 -v ~/prometheus.yml:/etc/prometheus/prometheus.yml --restart=always prom/prometheus
+1. git clone https://github.com/skenderidis/nap-dashboard.git
+2. mkdir ~/nap-dashboard/grafana/data
+3. mkdir ~/nap-dashboard/grafana/provisioning
+4. mkdir ~/nap-dashboard/elastic/data
+5. sudo chown -R 472:472 ~/nap-dashboard/grafana/data ~/nap-dashboard/grafana/provisioning
+6. cp ~/nginx-plus-dashboard/grafana-host/docker-compose.yaml ~/nap-dashboard
+7. cd ~/nap-dashboard
+8. docker-compose up -d
+9. curl -d "@elastic/index-template-waf.json" -H 'Content-Type: application/json' -X PUT 'http://localhost:9200/_index_template/nginx-nap-logs'
+10. curl -d "@grafana/DS-waf-index.json" -H 'Content-Type: application/json' -u 'admin:admin' -X POST 'http://localhost:3000/api/datasources/'
+11. curl -d "@grafana/DS-waf-decoded-index.json" -H 'Content-Type: application/json' -u 'admin:admin' -X POST 'http://localhost:3000/api/datasources/'
+12. Follow https://github.com/skenderidis/nap-dashboard (Import Dashboard)
+13. cd ~/nginx-plus-dashboard/grafana-host
+14. docker run -dit -p 9090:9090 -v ~/prometheus.yml:/etc/prometheus/prometheus.yml --restart=always prom/prometheus
 ```
 ```bash
 On Grafana dashboard
