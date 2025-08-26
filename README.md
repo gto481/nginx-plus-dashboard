@@ -41,9 +41,10 @@ On Nginx Host
 
 ***Install NGINX Plus with required modules and NAP***
 
-1. cd ~/nginx-plus-dashboard/nginx-host
-2. chmod +x nginx_plus_nap_install.sh
-3. ./nginx_plus_nap_install.sh
+1. git clone https://github.com/gto481/nginx-plus-dashboard.git
+2. cd ~/nginx-plus-dashboard/nginx-host
+3. chmod +x nginx_plus_nap_install.sh
+4. ./nginx_plus_nap_install.sh
 ```
 
 ```bash
@@ -51,18 +52,17 @@ On Nginx Host
 
 ***Ensure NGINX Plus and NAP are installed prior the following steps***
 
-1. git clone https://github.com/gto481/nginx-plus-dashboard.git
-2. cp ~/nginx-plus-dashboard/nginx-host/nginx/bundles/nap_log_profile.json_dashboard.tgz /etc/app_protect/bundles
-3. cp ~/nginx-plus-dashboard/nginx-host/nginx/bundles/policy-demo.tgz /etc/app_protect/bundles
-4. sudo chown -R 101:101 /etc/app_protect/bundles
-5. cp ~/nginx-plus-dashboard/nginx-host/nginx/nginx.conf /etc/nginx
-6. cp ~/nginx-plus-dashboard/nginx-host/nginx/conf.d/default.conf /etc/nginx/conf.d
-7. cp ~/nginx-plus-dashboard/nginx-host/nginx/conf.d/httplb.conf /etc/nginx/conf.d
-8. cp ~/nginx-plus-dashboard/nginx-host/nginx/conf.d/nginx-plus-mgmt.conf /etc/nginx/conf.d
-9. cp ~/nginx-plus-dashboard/nginx-host/nginx/cert/* /etc/nginx/cert
-10. cd ~/nginx-plus-dashboard/nginx-host/loki-promtail
-11. docker compose up -d
-12. sudo systemctl start nginx
+1. cp ~/nginx-plus-dashboard/nginx-host/nginx/bundles/nap_log_profile.json_dashboard.tgz /etc/app_protect/bundles
+2. cp ~/nginx-plus-dashboard/nginx-host/nginx/bundles/policy-demo.tgz /etc/app_protect/bundles
+3. sudo chown -R 101:101 /etc/app_protect/bundles
+4. cp ~/nginx-plus-dashboard/nginx-host/nginx/nginx.conf /etc/nginx
+5. cp ~/nginx-plus-dashboard/nginx-host/nginx/conf.d/default.conf /etc/nginx/conf.d
+6. cp ~/nginx-plus-dashboard/nginx-host/nginx/conf.d/httplb.conf /etc/nginx/conf.d
+7. cp ~/nginx-plus-dashboard/nginx-host/nginx/conf.d/nginx-plus-mgmt.conf /etc/nginx/conf.d
+8. cp ~/nginx-plus-dashboard/nginx-host/nginx/cert/* /etc/nginx/cert
+9. cd ~/nginx-plus-dashboard/nginx-host/loki-promtail
+10. docker compose up -d
+11. sudo systemctl start nginx
 
 ```
 ## Example Dashboard Screenshot
