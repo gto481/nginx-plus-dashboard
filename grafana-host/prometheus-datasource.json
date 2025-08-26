@@ -1,5 +1,4 @@
 {
-  "id": 1,
   "uid": "a9f56a9f-d2f8-456d-8c76-d8364638c5c4",
   "orgId": 1,
   "name": "prometheus",
@@ -16,7 +15,5 @@
   "jsonData": {
     "httpMethod": "POST"
   },
-  "secureJsonFields": {},
-  "version": 3,
   "readOnly": false
 }
