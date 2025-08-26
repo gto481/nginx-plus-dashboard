@@ -42,9 +42,9 @@ On Nginx Host
 ***Install NGINX Plus with required modules and NAP***
 
 1. git clone https://github.com/gto481/nginx-plus-dashboard.git
-2. upload your nginx-repo.crt to /home/ubuntu/nginx-repo.crt"
-3. upload your nginx-repo.key to /home/ubuntu/nginx-repo.key"
-4. upload your license.jwt to /home/ubuntu/license.jwt"
+2. upload your nginx-repo.crt to /home/ubuntu/nginx-repo.crt
+3. upload your nginx-repo.key to /home/ubuntu/nginx-repo.key
+4. upload your license.jwt to /home/ubuntu/license.jwt
 5. cd ~/nginx-plus-dashboard/nginx-host
 6. chmod +x nginx_plus_nap_install.sh
 7. ./nginx_plus_nap_install.sh
