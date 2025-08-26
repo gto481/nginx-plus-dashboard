@@ -11,7 +11,7 @@ To deploy this project run
 On Grafana Host
 1. Follow https://github.com/skenderidis/nap-dashboard
 2. cd ~/nginx-plus-dashboard/grafana-host
-2. docker run -dit -p 9090:9090 -v ~/prometheus.yml:/etc/prometheus/prometheus.yml --restart=always prom/prometheus
+3. docker run -dit -p 9090:9090 -v ~/prometheus.yml:/etc/prometheus/prometheus.yml --restart=always prom/prometheus
 ```
 ```bash
 On Grafana dashboard
