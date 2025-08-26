@@ -63,3 +63,8 @@ On Nginx Host
 11. sudo systemctl start nginx
 
 ```
+### Eample Dashboard Screenshot
+<img src="images/NAP-Main-Dashboard.jpg" alt="NAP-Main-Dashboard" width="400px">
+<img src="images/NAP-SupportID.jpg" alt="NAP-SupportID" width="400px">
+<img src="images/NGINX-Plus-Performance-Dashboard.jpg" alt="NGINX-Plus-Performance-Dashboard" width="400px">
+<img src="images/NGINX-Plus-Access-Log.jpg" alt="NGINX-Plus-Access-Log" width="400px">
